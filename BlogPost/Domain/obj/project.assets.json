@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\BlogApp\\BlogPost\\Domain\\Domain.csproj",
+      "projectUniqueName": "D:\\projects\\BlogApp1\\BlogPost\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "D:\\projects\\BlogApp\\BlogPost\\Domain\\Domain.csproj",
+      "projectPath": "D:\\projects\\BlogApp1\\BlogPost\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\BlogApp\\BlogPost\\Domain\\obj\\",
+      "outputPath": "D:\\projects\\BlogApp1\\BlogPost\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

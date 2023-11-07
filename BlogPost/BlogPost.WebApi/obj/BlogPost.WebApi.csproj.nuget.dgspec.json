@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projects\\BlogApp1\\BlogPost\\Infrastructure\\Infrastructure.csproj": {}
+    "D:\\projects\\BlogApp1\\BlogPost\\BlogPost.WebApi\\BlogPost.WebApi.csproj": {}
   },
   "projects": {
-    "D:\\projects\\BlogApp1\\BlogPost\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\projects\\BlogApp1\\BlogPost\\BlogPost.WebApi\\BlogPost.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\BlogApp1\\BlogPost\\Infrastructure\\Infrastructure.csproj",
-        "projectName": "Infrastructure",
-        "projectPath": "D:\\projects\\BlogApp1\\BlogPost\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "D:\\projects\\BlogApp1\\BlogPost\\BlogPost.WebApi\\BlogPost.WebApi.csproj",
+        "projectName": "BlogPost.WebApi",
+        "projectPath": "D:\\projects\\BlogApp1\\BlogPost\\BlogPost.WebApi\\BlogPost.WebApi.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\BlogApp1\\BlogPost\\Infrastructure\\obj\\",
+        "outputPath": "D:\\projects\\BlogApp1\\BlogPost\\BlogPost.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,6 +40,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.18.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -51,6 +62,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
