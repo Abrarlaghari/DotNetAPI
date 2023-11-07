@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Abstractions\" />
     <Folder Include="Behaviors\" />
-    <Folder Include="BlogPost\Commands\" />
     <Folder Include="BlogPost\Queries\" />
     <Folder Include="Exceptions\" />
   </ItemGroup>
