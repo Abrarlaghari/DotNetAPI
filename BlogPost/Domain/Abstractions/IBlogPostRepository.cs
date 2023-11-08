@@ -9,6 +9,6 @@ namespace Domain.Abstractions
 {
     public interface IBlogPostRepository
     {
-        void Insert(BlogPost blogPost);
+        Guid Insert(BlogPost blogPost);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,4 +7,4 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Application.BlogPost.Commands.CreateBlogPost;
-//public sealed record CreateBlogPostCommand(string BlogTitle) : ICommand<Guid>;
+public sealed record CreateBlogPostCommand(string BlogTitle,string Author, string Content) : IRequest<Guid>;
