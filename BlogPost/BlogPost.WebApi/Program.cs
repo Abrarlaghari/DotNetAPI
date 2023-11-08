@@ -1,5 +1,7 @@
 using AspNetCoreRateLimit;
+using Microsoft.Extensions.DependencyInjection;
 
+var PresentationAssembly=typeof(Presentation.Controllers.BlogPostController).Assembly;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -19,7 +21,7 @@ builder.Services.Configure<IpRateLimitOptions>(options =>
 });
 builder.Services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
 builder.Services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
-
+builder.Services.AddControllers().AddApplicationPart(PresentationAssembly);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
