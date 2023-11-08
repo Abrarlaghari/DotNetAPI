@@ -11,11 +11,10 @@ namespace Presentation.Controllers
 {
     public sealed class BlogPostController : ApiController
     {
-
         [Microsoft.AspNetCore.Mvc.HttpPost]
         [ProducesResponseType(typeof(Guid), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-
+        
         public async Task<IActionResult> CreateBlogPost(Guid request, CancellationToken cancellationToken)
         {
 

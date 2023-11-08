@@ -20,7 +20,7 @@ internal sealed class CreateBlogPostCommandHandler : IRequestHandler<CreateBlogP
     }
     public Task<Guid> Handle(CreateBlogPostCommand request, CancellationToken cancellationToken)
     {
-       var blogPost=_blogPostRepository.Insert(new Domain.Entities.BlogPost(Guid.NewGuid(),request.BlogTitle,request.Author,request.Author));
+       var blogPost=_blogPostRepository.Insert(new Domain.Entities.BlogPost(Guid.NewGuid(),request.BlogTitle,request.Author, request.Content));
        return Task.FromResult(blogPost);
 
     }
