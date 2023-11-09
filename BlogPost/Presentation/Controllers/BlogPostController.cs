@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Application.BlogPost.Queries.GetBlogPost;
 using MediatR;
 using Application.BlogPost.Commands.CreateBlogPost;
+using Application.BlogPost.Commands.CreateBlogComment;
 
 
 namespace Presentation.Controllers
@@ -41,6 +42,17 @@ namespace Presentation.Controllers
             var blogpost=await _mediator.Send(query,cancellationToken);
             return blogpost;
 
+        }
+
+        [Authorize]
+        [Microsoft.AspNetCore.Mvc.HttpPost]
+        [ProducesResponseType(typeof(Guid), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<Guid> CreateBlogComment([Microsoft.AspNetCore.Mvc.FromBody] CreateBlogCommentCommand command,
+            CancellationToken cancellationToken)
+        {
+            var CommentId = await _mediator.Send(command);
+            return CommentId;
         }
     }
 }
