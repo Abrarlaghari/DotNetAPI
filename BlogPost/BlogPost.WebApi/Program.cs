@@ -1,4 +1,5 @@
 using AspNetCoreRateLimit;
+using BlogPost.WebApi.Authentication;
 using Microsoft.Extensions.DependencyInjection;
 
 var PresentationAssembly=typeof(Presentation.Controllers.BlogPostController).Assembly;
@@ -19,6 +20,8 @@ builder.Services.Configure<IpRateLimitOptions>(options =>
                 }
             };
 });
+
+builder.Services.AddSingleton<IMockAuthenticationService ,MockAuthenticationService>();
 builder.Services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
 builder.Services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
 builder.Services.AddControllers().AddApplicationPart(PresentationAssembly);
@@ -43,7 +46,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseIpRateLimiting();
-
+app.UseAuthentication();
+app.UseAuthorization();
 var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"

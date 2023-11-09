@@ -23,7 +23,7 @@ namespace Presentation.Controllers
         {
             _mediator = mediator;
         }
-
+        [Authorize]
         [Microsoft.AspNetCore.Mvc.HttpPost]
         [ProducesResponseType(typeof(Guid), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -32,14 +32,13 @@ namespace Presentation.Controllers
       
         public async Task<Guid> CreateBlogPost([Microsoft.AspNetCore.Mvc.FromBody] CreateBlogPostCommand command, CancellationToken cancellationToken)
         {
-            var productId = await _mediator.Send(command);
-            return productId;
+            var BlogId = await _mediator.Send(command);
+            return BlogId;
 
         }
-
+        [Authorize]
         [Microsoft.AspNetCore.Mvc.HttpGet("{blogPostId:guid}")]
         [ProducesResponseType(typeof(string),StatusCodes.Status200OK)]
-
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<Domain.Entities.BlogPost> GetBlogPost(Guid request, CancellationToken cancellationToken)
         {
