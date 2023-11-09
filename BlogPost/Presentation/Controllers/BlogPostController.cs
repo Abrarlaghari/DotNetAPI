@@ -21,10 +21,7 @@ namespace Presentation.Controllers
         [Authorize]
         [Microsoft.AspNetCore.Mvc.HttpPost]
         [ProducesResponseType(typeof(Guid), StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-
-
-      
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]      
         public async Task<Guid> CreateBlogPost([Microsoft.AspNetCore.Mvc.FromBody] CreateBlogPostCommand command, CancellationToken cancellationToken)
         {
             var BlogId = await _mediator.Send(command);
@@ -32,6 +29,7 @@ namespace Presentation.Controllers
 
         }
         [Authorize]
+        [Microsoft.AspNetCore.Mvc. Route("api/GetBlogPost")]
         [Microsoft.AspNetCore.Mvc.HttpGet("{blogPostId:guid}")]
         [ProducesResponseType(typeof(string),StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
