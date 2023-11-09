@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Http;
+﻿using System.Web.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Application.BlogPost.Queries.GetBlogPost;
 using MediatR;
-using Domain.Entities;
 using Application.BlogPost.Commands.CreateBlogPost;
 
 

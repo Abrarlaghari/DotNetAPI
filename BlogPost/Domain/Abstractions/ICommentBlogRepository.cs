@@ -2,7 +2,7 @@
 
 namespace Domain.Abstractions
 {
-    internal interface ICommentBlogRepository
+    public interface ICommentBlogRepository
     {
         Guid Insert(BlogComment blogComment);
     }

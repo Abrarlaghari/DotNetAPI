@@ -1,9 +1,4 @@
 ﻿using Domain.Premitives;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
@@ -13,14 +8,15 @@ namespace Domain.Entities
         {
             BlogTitle=blogTitle;
             Author=author;
-            Content=content; 
-
-
+            Content=content;
+            Comments = new List<BlogComment>();
         }
 
         public string BlogTitle { get; private set; }
         public string Author { get; private set; }
 
         public string Content { get; private set; }
+
+        public List<BlogComment> Comments { get; private set; }
     }
 }
